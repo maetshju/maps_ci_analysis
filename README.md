@@ -1,3 +1,8 @@
+# Confidence interval analysis for MAPS
+
+[![DOI](https://zenodo.org/badge/923227516.svg)](https://doi.org/10.5281/zenodo.15571293)
+
+
 0. Run `00-copy_data.jl` to copy the data from existing folders.
 1. Run `01-resample_audio.praat` to ensure the audio is sampled at 16,000 Hz.
 2. Run `02-align_train_orth.sh` to align the training data using dictionary lookup transcriptions.
