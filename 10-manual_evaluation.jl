@@ -44,6 +44,11 @@ function main(table_name, err_out_name)
 	dat_res = CSV.read(table_name, DataFrame, delim='\t')
 	dat_res_g = groupby(dat_res, :file)
 	errors = Float64[]
+	p = []
+	tim_errors = Float64[]
+	tim_p = []
+	buck_errors = Float64[]
+	buck_p = []
 	contained = Bool[]
 # 	ensemble_names = [x for x in readdir(VAL_DIR) if occursin("ensemble", x)]
 # 	@showprogress for fname in ensemble_names
@@ -60,6 +65,7 @@ function main(table_name, err_out_name)
 		dat_times = g.segment_maxtime
 		dat_cilo = g.segment_lo_ci
 		dat_cihi = g.segment_hi_ci
+		ranges = [(lo, hi) for (lo, hi) in zip(dat_cilo, dat_cihi)]
 		s_idx = startswith(fname, "s") ? 2 : 1
 		if length(tg_tg.tiers[s_idx]) == 1
 			tg_times = [tg_tg.tiers[s_idx][1].maxTime]
@@ -87,15 +93,36 @@ function main(table_name, err_out_name)
 			end
 		end
 		er = dat_times[1:end-1] .- tg_times[1:end-1]
+		presences = [b <= t <= e for (b, e, t) in zip(dat_cilo[1:end-1], dat_cihi[1:end-1], tg_times[1:end-1])]
+		if startswith(fname, "s")
+			append!(buck_errors, er)
+			append!(buck_p, presences)
+		else
+			append!(tim_errors, er)
+			append!(tim_p, presences)
+		end
 		append!(errors, er)
+		append!(p, presences)
 	end
 	mn = round(mean(abs.(errors)) * 1000, digits=2)
 	mdn = round(median(abs.(errors)) * 1000, digits=2)
 	println(mn)
 	println(mdn)
 	open(err_out_name, "w") do w
-		for er in errors
-			write(w, "$er\n")
+		for (er, pr) in zip(errors, p)
+			write(w, "$er\t$pr\n")
+		end
+	end
+
+	open("tim" * err_out_name, "w") do w
+		for (er, pr) in zip(tim_errors, tim_p)
+			write(w, "$er\t$pr\n")
+		end
+	end
+
+	open("buck" * err_out_name, "w") do w
+		for (er, pr) in zip(buck_errors, buck_p)
+			write(w, "$er\t$pr\n")
 		end
 	end
 end

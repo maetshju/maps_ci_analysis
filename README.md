@@ -19,3 +19,4 @@
 13. Run `13-ci_widths.jl` to assess the widths of the confidence intervals.
 14. Run `14-create_ci_fig.praat` to create the confidence intervals figure from the paper.
 15. Run `15-create_word_seg_fig.praat` to create the word segmentation figure from the paper.
+16. Run `16-heatmap_plots.jl` to create the heatmaps comparing bisegment CI widths.
