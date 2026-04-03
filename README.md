@@ -14,9 +14,7 @@
 8. Run `08-align_val_manual.sh` to align the validation data using the manual transcriptions.
 9. Run `09-align_test_manual.sh` to align the test data using the manual transcriptions.
 10. Run `10-manual_evaluation.jl` to test the alignment on the manually transcribed data.
-11. Run `11-dtw_evaluation.jl` to test the alignment on the dictionary-based transcripitons using dynamic time warping.
-12. Run `12-mdtw_evaluation.jl` to test the alignment on the manual transcriptions using dynamic time warping.
-13. Run `13-ci_widths.jl` to assess the widths of the confidence intervals.
-14. Run `14-create_ci_fig.praat` to create the confidence intervals figure from the paper.
-15. Run `15-create_word_seg_fig.praat` to create the word segmentation figure from the paper.
-16. Run `16-heatmap_plots.jl` to create the heatmaps comparing bisegment CI widths.
+11. Run `11-ci_widths.jl` to assess the widths of the confidence intervals.
+12. Run `12-create_ci_fig.praat` to create the confidence intervals figure from the paper.
+13. Run `13-create_word_seg_fig.praat` to create the word segmentation figure from the paper.
+14. Run `14-heatmap_plots.jl` to create the heatmaps comparing bisegment CI widths.
