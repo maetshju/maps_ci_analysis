@@ -45,15 +45,15 @@ function main(table_name, err_out_name)
 		if length(dat_times) == 1 || length(tg_times) == 1
 			continue
 		end
-		d, p1, p2 = dtw(dat_times[1:end-1], tg_times[1:end-1], cityblock)
+		d, p1, p2 = dtw(dat_times, tg_times, cityblock)
 # 		println(abs.(dat_times .- tg_times))
 # 		println(mean(abs.(dat_times .- tg_times)))
 # 		println(d)
-		d /= length(dat_times) - 1
+		d /= length(dat_times)
 # 		println(d)
 # 		exit()
 # 		append!(errors, repeat([d], length(val_times)))
-		append!(errors, repeat([d], length(dat_times) - 1))
+		append!(errors, repeat([d], length(dat_times)))
 	end
 	mn = round(mean(abs.(errors)) * 1000, digits=2)
 	mdn = round(median(abs.(errors)) * 1000, digits=2)

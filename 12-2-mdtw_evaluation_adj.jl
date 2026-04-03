@@ -13,9 +13,9 @@ const TG_DIR = "/home/matt/timbuck_data/timbuck_textgrids"
 const VAL_TABLE = "val_audio16_manual_ensemble_model_alignment_results.tsv"
 const TEST_TABLE = "test_audio16_manual_ensemble_model_alignment_results.tsv"
 const TRAIN_TABLE = "train_audio16_manual_ensemble_model_alignment_results.tsv"
-const VAL_ERR_OUT_NAME = "val_manual_dtw_errors.txt"
-const TEST_ERR_OUT_NAME = "test_manual_dtw_errors.txt"
-const TRAIN_ERR_OUT_NAME = "train_manual_dtw_errors.txt"
+const VAL_ERR_OUT_NAME = "val_manual_dtw_errors_adj.txt"
+const TEST_ERR_OUT_NAME = "test_manual_dtw_errors_adj.txt"
+const TRAIN_ERR_OUT_NAME = "train_manual_dtw_errors_adj.txt"
 
 function main(table_name, err_out_name)
 
@@ -45,11 +45,11 @@ function main(table_name, err_out_name)
 		if length(dat_times) == 1 || length(tg_times) == 1
 			continue
 		end
-		d, p1, p2 = dtw(dat_times, tg_times, cityblock)
+		d, p1, p2 = dtw(dat_times[1:end-1], tg_times[1:end-1], cityblock)
 # 		println(abs.(dat_times .- tg_times))
 # 		println(mean(abs.(dat_times .- tg_times)))
 # 		println(d)
-		d /= length(dat_times)
+		d /= length(dat_times) - 1
 # 		println(d)
 # 		exit()
 # 		append!(errors, repeat([d], length(val_times)))
