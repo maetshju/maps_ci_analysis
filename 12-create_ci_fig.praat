@@ -1,8 +1,8 @@
 Erase all
 start = 0.5571435530707061
-final = 1.1233022171669795
+final = 0.91233022171669795
 s = Read from file: "/home/matt/maps_ci_data/train/audio16/FAEM0SX42.wav"
-tg = Read from file: "/home/matt/maps_ci_data/train/audio16/FAEM0SX42_ensemble.TextGrid"
+tg = Read from file: "/home/matt/maps_ci_data/train/audio16_manual/FAEM0SX42_ensemble.TextGrid"
 
 selectObject(s)
 
@@ -22,13 +22,13 @@ Text left: "no", "Frequency (Hz)"
 
 selectObject(tg)
 Remove tier: 1
-Remove point: 2, 18
+Remove point: 2, 16
 Select outer viewport: 0, 6.5, 0, 5
-Draw: start, final, "no", "yes", "no"
+Draw: start, final, "no", "no", "no"
 Marks bottom: 2, "yes", "yes", "no"
 Text bottom: "no", "Time (s)"
 Colour: "Blue"
-for i from 18 to 29
+for i from 18 to 21
 	t = Get time of point: 2, i
 	One mark bottom: t, "no", "no", "yes", ""
 endfor

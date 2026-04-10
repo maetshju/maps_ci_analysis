@@ -16,5 +16,4 @@
 10. Run `10-manual_evaluation.jl` to test the alignment on the manually transcribed data.
 11. Run `11-ci_widths.jl` to assess the widths of the confidence intervals.
 12. Run `12-create_ci_fig.praat` to create the confidence intervals figure from the paper.
-13. Run `13-create_word_seg_fig.praat` to create the word segmentation figure from the paper.
-14. Run `14-heatmap_plots.jl` to create the heatmaps comparing bisegment CI widths.
+14. Run `13-heatmap_plots.jl` to create the heatmaps comparing bisegment CI widths.
