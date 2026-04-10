@@ -28,7 +28,7 @@ Draw: start, final, "no", "no", "no"
 Marks bottom: 2, "yes", "yes", "no"
 Text bottom: "no", "Time (s)"
 Colour: "Blue"
-for i from 18 to 21
+for i from 16 to 21
 	t = Get time of point: 2, i
 	One mark bottom: t, "no", "no", "yes", ""
 endfor
