@@ -45,7 +45,7 @@ pdf("vowel-app-cdf.pdf", width=6, height=4)
 plot(lt50, ecdf(test_cats$width[test_cats$category == "vowel" & test_cats$cat2 == "vowel"])(lt50),
      xlim=c(0, 50), type="l", col=cols[1], lwd=2,
      xlab="Boundary width (ms)",
-     ylab="Proportion within tolerance")
+     ylab="Proportion within tolerance", cex.lab=1.5, cex.axis=1.5)
 lines(lt50, ecdf(test_cats$width[test_cats$category == "vowel" & test_cats$cat2 == "approximant"])(lt50),
       xlim=c(0, 50), lty=2, col=cols[2], lwd=2)
 lines(lt50, ecdf(test_cats$width[test_cats$category == "approximant" & test_cats$cat2 == "vowel"])(lt50),
@@ -54,14 +54,14 @@ abline(h=0.5)
 abline(h=0.25, lty=4, lwd=0.5)
 abline(h=0.75, lty=4, lwd=0.5)
 legend("bottomright", legend=c("vowel-vowel", "vowel-approximant", "approximant-vowel"), lty=1:3, col=cols,
-       bg="white")
+       bg="white", cex=1.5, lwd=2)
 dev.off()
 
 pdf("vowel-stop-fric.pdf", width=6, height=4)
 plot(lt50, ecdf(test_cats$width[test_cats$category == "vowel" & test_cats$cat2 == "vowel"])(lt50),
      xlim=c(0, 50), type="l", col=cols[1], lwd=2,
      xlab="Boundary width (ms)",
-     ylab="Proportion within tolerance", ylim=c(0, 1))
+     ylab="Proportion within tolerance", ylim=c(0, 1), cex.lab=1.5, cex.axis=1.5)
 lines(lt50, ecdf(test_cats$width[test_cats$category == "stop" & test_cats$cat2 == "fricative"])(lt50),
       xlim=c(0, 50), lty=2, col=cols[2], lwd=2)
 lines(lt50, ecdf(test_cats$width[test_cats$category == "fricative" & test_cats$cat2 == "stop"])(lt50),
@@ -70,14 +70,14 @@ abline(h=0.5)
 abline(h=0.25, lty=4, lwd=0.5)
 abline(h=0.75, lty=4, lwd=0.5)
 legend("bottomright", legend=c("vowel-vowel", "stop-fricative", "fricative-stop"), lty=1:3, col=cols,
-       bg="white")
+       bg="white", cex=1.5, lwd=2)
 dev.off()
 
 pdf("vowel-stop-fric2.pdf", width=6, height=4)
 plot(lt50, ecdf(test_cats$width[test_cats$category == "vowel" & test_cats$cat2 == "vowel"])(lt50),
      xlim=c(0, 50), type="l", col=cols[1], lwd=2,
      xlab="Boundary width (ms)",
-     ylab="Proportion within tolerance", ylim=c(0, 1))
+     ylab="Proportion within tolerance", ylim=c(0, 1), cex.lab=1.5, cex.axis=1.5)
 lines(lt50, ecdf(test_cats$width[test_cats$category == "stop" & test_cats$cat2 == "stop"])(lt50),
       xlim=c(0, 50), lty=2, col=cols[2], lwd=2)
 lines(lt50, ecdf(test_cats$width[test_cats$category == "fricative" & test_cats$cat2 == "fricative"])(lt50),
@@ -86,14 +86,14 @@ abline(h=0.5)
 abline(h=0.25, lty=4, lwd=0.5)
 abline(h=0.75, lty=4, lwd=0.5)
 legend("bottomright", legend=c("vowel-vowel", "stop-stop", "fricative-fricative"), lty=1:3, col=cols,
-       bg="white")
+       bg="white", cex=1.5, lwd=2)
 dev.off()
 
 pdf("vowel-stop-sil.pdf", width=6, height=4)
 plot(lt50, ecdf(test_cats$width[test_cats$category == "vowel" & test_cats$cat2 == "vowel"])(lt50),
      xlim=c(0, 50), type="l", col=cols[1], lwd=2,
      xlab="Boundary width (ms)",
-     ylab="Proportion within tolerance", ylim=c(0, 1))
+     ylab="Proportion within tolerance", ylim=c(0, 1), cex.lab=1.5, cex.axis=1.5)
 lines(lt50, ecdf(test_cats$width[test_cats$category == "stop" & test_cats$cat2 == "silence"])(lt50),
       xlim=c(0, 50), lty=2, col=cols[2], lwd=2)
 lines(lt50, ecdf(test_cats$width[test_cats$category == "silence" & test_cats$cat2 == "stop"])(lt50),
@@ -102,6 +102,6 @@ abline(h=0.5)
 abline(h=0.25, lty=4, lwd=0.5)
 abline(h=0.75, lty=4, lwd=0.5)
 legend("bottomright", legend=c("vowel-vowel", "stop-silence", "silence-stop"), lty=1:3, col=cols,
-       bg="white")
+       bg="white", cex=1.5, lwd=2)
 dev.off()
 

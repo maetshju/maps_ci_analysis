@@ -6,13 +6,15 @@ tg = Read from file: "/home/matt/maps_ci_data/train/audio16_manual/FAEM0SX42_ens
 
 selectObject(s)
 
-Select outer viewport: 0, 6.5, 0, 1.5
+Font size: 16
+
+Select outer viewport: 0, 6.5, 0, 3
 Draw: start, final, 0, 0, "no", "curve"
 Draw inner box
 Marks left: 2, "yes", "yes", "no"
 Text left: "no", "Amplitude"
 
-Select outer viewport: 0, 6.5, 0.85, 3.575
+Select outer viewport: 0, 6.5, 2, 5
 selectObject(s)
 sp = To Spectrogram: 0.005, 5000, 0.002, 20, "Gaussian"
 Paint: start, final, 0, 0, 100, "yes", 50, 6, 0, "no"
@@ -23,7 +25,7 @@ Text left: "no", "Frequency (Hz)"
 selectObject(tg)
 Remove tier: 1
 Remove point: 2, 16
-Select outer viewport: 0, 6.5, 0, 5
+Select outer viewport: 0, 6.5, 0, 6.875
 Draw: start, final, "no", "no", "no"
 Marks bottom: 2, "yes", "yes", "no"
 Text bottom: "no", "Time (s)"

@@ -77,8 +77,14 @@ m
 # ╔═╡ 5cdd39b2-7f0e-4cb6-82fe-32ad19b0b54d
 labels = sort(collect(Set(d.current)))
 
+# ╔═╡ ff8dceb2-bb97-417a-be6e-ccea46cc7535
+
+
+# ╔═╡ f6529da9-f039-49d3-9b73-5937b2810893
+
+
 # ╔═╡ 8c911d71-cf7f-4ef6-9386-1a0f6b5b42b2
-heatmap(m .* 1000, xticks=(1:7, labels), yticks=(1:7, labels), xlab="Following segment", ylab="First segment", colorbar_title="Mean CI width (ms)", size=(800, 400), left_margin=2Plots.mm, bottom_margin=2Plots.mm, yaxis=:flip, clim=(0, 50), grid=false)
+heatmap(m .* 1000, xticks=(1:7, labels), yticks=(1:7, labels), xlab="Following segment", ylab="First segment", colorbar_title="Mean CI width (ms)", size=(800, 400), left_margin=5Plots.mm, bottom_margin=15Plots.mm, yaxis=:flip, clim=(0, 50), grid=false, tickfontsize=12, guidefontsize=12, colorbar_titlefontsize=12, rotation=45)
 
 # ╔═╡ a71b0f47-46b0-4175-ad71-e8710b5108af
 savefig("test_by_category_mean_widths.pdf")
@@ -98,7 +104,7 @@ begin
 end
 
 # ╔═╡ da07cb75-37b0-4fc6-be2a-308afcb67080
-heatmap(m2 .* 1000, xticks=(1:7, labels), yticks=(1:7, labels), xlab="Following segment", ylab="First segment", colorbar_title="Median CI width (ms)", size=(800, 400), left_margin=2Plots.mm, bottom_margin=2Plots.mm, yaxis=:flip, clim=(0, 50), grid=false)
+heatmap(m2 .* 1000, xticks=(1:7, labels), yticks=(1:7, labels), xlab="Following segment", ylab="First segment", colorbar_title="Median CI width (ms)", size=(800, 400), left_margin=5Plots.mm, bottom_margin=15Plots.mm, yaxis=:flip, clim=(0, 50), grid=false, tickfontsize=12, guidefontsize=12, colorbar_titlefontsize=12, rotation=45)
 
 # ╔═╡ 729b4352-39c7-494b-a97a-6fd06566f91e
 savefig("test_by_category_median_widths.pdf")
@@ -1346,6 +1352,8 @@ version = "1.13.0+0"
 # ╠═9604c204-42cd-4ea8-bccf-524e6678081f
 # ╠═e754f1e2-b017-4289-96dc-87d34d44a471
 # ╠═5cdd39b2-7f0e-4cb6-82fe-32ad19b0b54d
+# ╠═ff8dceb2-bb97-417a-be6e-ccea46cc7535
+# ╠═f6529da9-f039-49d3-9b73-5937b2810893
 # ╠═8c911d71-cf7f-4ef6-9386-1a0f6b5b42b2
 # ╠═a71b0f47-46b0-4175-ad71-e8710b5108af
 # ╠═4c6c8054-f2ef-4524-b51c-df147da8cce1
